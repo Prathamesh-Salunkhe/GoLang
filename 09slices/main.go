@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 
@@ -23,4 +26,16 @@ func main() {
 	//highScore[4] = 555
 	highScore = append(highScore, 147, 258, 369)
 	fmt.Println(highScore)
+
+	sort.Ints(highScore)
+	fmt.Println(highScore)
+	fmt.Println(sort.IntsAreSorted(highScore))
+
+	//how to remove a value from slices based on index
+
+	var course = []string{"reacjs", "java", "python", "ruby", "js"}
+	fmt.Println(course)
+	var index int = 2
+	course = append(course[:index], course[index+1:]...)
+	fmt.Println(course)
 }
